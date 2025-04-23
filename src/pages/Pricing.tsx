@@ -267,7 +267,7 @@ const Pricing = () => {
           <div className="container">
             <SectionTitle 
               title="ROI Calculator" 
-              subtitle="See how ParkSmart can increase your parking revenue"
+              subtitle="See how ezParks can increase your parking revenue"
             />
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
