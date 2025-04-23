@@ -45,11 +45,3 @@ npm install
 ```bash
 npm run dev
 ```
-
-## 📁 Folder Structure
-src/
-├── components/        
-├── pages/             
-├── assets/            
-├── styles/            
-├── utils/             
