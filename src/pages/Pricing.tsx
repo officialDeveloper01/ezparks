@@ -20,54 +20,55 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Basic',
-      description: 'Perfect for small parking lots',
-      monthlyPrice: 999,
-      yearlyPrice: 899 * 12,
+      description: 'Best for gated communities and standalone facilities',
+      monthlyPrice: 5000,
+      yearlyPrice: 55200,
       features: [
-        { name: 'Up to 100 parking spaces', included: true },
-        { name: 'IoT sensors & basic hardware', included: true },
-        { name: 'Mobile app for users', included: true },
-        { name: 'Basic analytics dashboard', included: true },
-        { name: 'Email support', included: true },
-        { name: 'ANPR integration', included: false },
-        { name: 'Dynamic pricing', included: false },
-        { name: 'API access', included: false },
+        { name: 'Real-Time Parking Slot Tracking', included: true },
+        { name: 'AI-Based Occupancy Reports', included: false },
+        { name: 'UPI & FASTag Payment Integration', included: true },
+        { name: 'Basic Business Dashboard', included: true },
+        { name: 'Dynamic Pricing Optimization', included: false },
+        { name: 'Automated License Plate Recognition (ANPR)', included: false },
+        { name: 'Ad Revenue from In-App Promotions', included: false },
+        { name: 'Email Support', included: true },
       ],
     },
     {
       name: 'Standard',
-      description: 'Ideal for medium-sized facilities',
-      monthlyPrice: 1999,
-      yearlyPrice: 1799 * 12,
+      description: 'Ideal for malls, IT parks, and commercial buildings',
+      monthlyPrice: 10000,
+      yearlyPrice: 110400,
       popular: true,
       features: [
-        { name: 'Up to 300 parking spaces', included: true },
-        { name: 'IoT sensors & advanced hardware', included: true },
-        { name: 'Mobile app for users', included: true },
-        { name: 'Advanced analytics dashboard', included: true },
-        { name: 'Priority email & phone support', included: true },
-        { name: 'ANPR integration', included: true },
-        { name: 'Dynamic pricing', included: true },
-        { name: 'API access', included: false },
+        { name: 'Real-Time Parking Slot Tracking', included: true },
+        { name: 'AI-Based Occupancy Reports', included: true },
+        { name: 'UPI & FASTag Payment Integration', included: true },
+        { name: 'Advanced Business Dashboard', included: true },
+        { name: 'Dynamic Pricing Optimization', included: true },
+        { name: 'Automated License Plate Recognition (ANPR)', included: false },
+        { name: 'Ad Revenue from In-App Promotions', included: false },
+        { name: 'Priority Support (Email & Phone)', included: true },
       ],
     },
     {
       name: 'Enterprise',
-      description: 'For large parking facilities',
-      monthlyPrice: 3999,
-      yearlyPrice: 3599 * 12,
+      description: 'Best for airports, smart cities, and large operators',
+      monthlyPrice: 25000,
+      yearlyPrice: 276000,
       features: [
-        { name: 'Unlimited parking spaces', included: true },
-        { name: 'IoT sensors & premium hardware', included: true },
-        { name: 'Custom mobile app', included: true },
-        { name: 'Enterprise analytics dashboard', included: true },
-        { name: '24/7 dedicated support', included: true },
-        { name: 'ANPR integration', included: true },
-        { name: 'Dynamic pricing', included: true },
-        { name: 'API access', included: true },
+        { name: 'Real-Time Parking Slot Tracking', included: true },
+        { name: 'AI-Based Occupancy Reports', included: true },
+        { name: 'UPI & FASTag Payment Integration', included: true },
+        { name: 'Enterprise Analytics Dashboard', included: true },
+        { name: 'Dynamic Pricing Optimization', included: true },
+        { name: 'Automated License Plate Recognition (ANPR)', included: true },
+        { name: 'Ad Revenue from In-App Promotions', included: true },
+        { name: '24/7 Dedicated Support', included: true },
       ],
     },
   ];
+  
 
   // Calculate ROI
   const calculateMonthlyRevenue = () => {
@@ -215,6 +216,52 @@ const Pricing = () => {
           </div>
         </section>
 
+        {/* Comparison Table */}
+        <div className="mt-16 overflow-x-auto">
+          <h2 className="text-2xl font-bold text-center mb-6">Compare Plans</h2>
+          <table className="min-w-full text-sm text-left border rounded-xl overflow-hidden shadow-sm bg-white">
+            <thead className="bg-gray-100 text-gray-700">
+              <tr>
+                <th className="px-6 py-3 font-semibold">Feature</th>
+                <th className="px-6 py-3 font-semibold text-center">Basic</th>
+                <th className="px-6 py-3 font-semibold text-center">Standard</th>
+                <th className="px-6 py-3 font-semibold text-center">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {[
+                ['Real-Time Parking Slot Tracking', true, true, true],
+                ['AI-Based Occupancy Reports', false, true, true],
+                ['UPI & FASTag Payment Integration', true, true, true],
+                ['Business Dashboard', true, true, true],
+                ['Dynamic Pricing Optimization', false, true, true],
+                ['Automated License Plate Recognition (ANPR)', false, false, true],
+                ['Ad Revenue from In-App Promotions', false, false, true],
+                ['Support Type', 'Email Only', 'Priority Email & Phone', '24/7 Dedicated Support'],
+              ].map(([feature, basic, standard, enterprise], index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 font-medium text-gray-800">{feature}</td>
+                  {[basic, standard, enterprise].map((item, idx) => (
+                    <td
+                      key={idx}
+                      className="px-6 py-4 text-center text-gray-800"
+                    >
+                      {typeof item === 'boolean' ? (
+                        item ? (
+                          <Check className="inline h-5 w-5 text-green-500" />
+                        ) : (
+                          <X className="inline h-5 w-5 text-red-500" />
+                        )
+                      ) : (
+                        item
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         {/* ROI Calculator */}
         <section className="section bg-gray-50">
           <div className="container">
