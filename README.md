@@ -48,8 +48,8 @@ npm run dev
 
 ## 📁 Folder Structure
 src/
-├── components/        // Reusable UI components
-├── pages/             // Route-based components like Pricing, Contact
-├── assets/            // Logos, images, icons
-├── styles/            // Tailwind config and global styles
-├── utils/             // Utility functions (e.g. currency formatter)
+├── components/        
+├── pages/             
+├── assets/            
+├── styles/            
+├── utils/             
