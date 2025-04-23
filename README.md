@@ -32,11 +32,24 @@ ezParks is a modern, responsive SaaS web application that enables real-time park
 ---
 
 ## 🚀 Getting Started
-
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/your-username/ezparks.git
 cd ezparks
+```
+### 2. Install dependencies
+```bash
 npm install
+```
+### 3. Start the development server
+```bash
 npm run dev
+```
+
+## 📁 Folder Structure
+src/
+├── components/        // Reusable UI components
+├── pages/             // Route-based components like Pricing, Contact
+├── assets/            // Logos, images, icons
+├── styles/            // Tailwind config and global styles
+├── utils/             // Utility functions (e.g. currency formatter)
